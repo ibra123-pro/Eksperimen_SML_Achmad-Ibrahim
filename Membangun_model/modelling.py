@@ -18,9 +18,9 @@ def train_model():
     
     # 2. Load Dataset Hasil Preprocessing Sebelumnya
     # Menyesuaikan dengan letak file data kamu (bisa selevel atau di subfolder)
-    data_path = "../preprocessing/data_penjualan_siap_ml.csv" 
+    data_path = "data_penjualan_siap_ml.csv" 
     try:
-        df = pd.read_excel(data_path)
+        df = pd.read_csv(data_path)
         print(f"Dataset berhasil dimuat. Ukuran: {df.shape}")
     except FileNotFoundError:
         # Fallback jika posisinya ditaruh satu folder yang sama sesuai image_4d020b.png

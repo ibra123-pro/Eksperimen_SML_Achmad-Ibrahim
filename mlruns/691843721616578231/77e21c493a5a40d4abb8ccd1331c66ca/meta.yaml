@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/691843721616578231/77e21c493a5a40d4abb8ccd1331c66ca/artifacts
+end_time: 1780573481914
+entry_point_name: ''
+experiment_id: '691843721616578231'
+lifecycle_stage: active
+run_id: 77e21c493a5a40d4abb8ccd1331c66ca
+run_name: RandomForest_Hyperparameter_Tuning
+run_uuid: 77e21c493a5a40d4abb8ccd1331c66ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780573474832
+status: 3
+tags: []
+user_id: baimg

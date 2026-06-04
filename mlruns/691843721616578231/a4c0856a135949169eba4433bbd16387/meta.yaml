@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/691843721616578231/a4c0856a135949169eba4433bbd16387/artifacts
+end_time: 1780571124520
+entry_point_name: ''
+experiment_id: '691843721616578231'
+lifecycle_stage: active
+run_id: a4c0856a135949169eba4433bbd16387
+run_name: RandomForest_Baseline_Local
+run_uuid: a4c0856a135949169eba4433bbd16387
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780571115389
+status: 3
+tags: []
+user_id: baimg
