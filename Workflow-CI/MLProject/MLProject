@@ -1,0 +1,14 @@
+name: UMKM_Pondok_Gede_Modelling_Pipeline
+
+# Menggunakan lingkungan lokal karena dependensi akan diurus oleh GitHub runner
+environment:
+  python: "3.12"
+
+entry_points:
+  # Entry point untuk baseline model (modelling.py)
+  main:
+    command: "python modelling.py"
+
+  # Entry point untuk hyperparameter tuning (modelling_tuning.py)
+  tuning:
+    command: "python modelling_tuning.py"
