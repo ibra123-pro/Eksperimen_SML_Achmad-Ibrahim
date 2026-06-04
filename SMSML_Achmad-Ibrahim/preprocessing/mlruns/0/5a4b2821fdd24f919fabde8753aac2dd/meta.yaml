@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/5a4b2821fdd24f919fabde8753aac2dd/artifacts
+end_time: 1780586778099
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5a4b2821fdd24f919fabde8753aac2dd
+run_name: awesome-pig-410
+run_uuid: 5a4b2821fdd24f919fabde8753aac2dd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780586776033
+status: 3
+tags: []
+user_id: runner
