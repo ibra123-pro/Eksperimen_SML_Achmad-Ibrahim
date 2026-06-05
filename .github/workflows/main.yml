@@ -45,6 +45,8 @@ jobs:
           GIT_NAME: ${{ secrets.username }}
           GIT_EMAIL: ${{ secrets.email }}
       run: |
+          git config --global user.name "${GIT_NAME:-ibra123-pro}"
+          git config --global user.email "${GIT_EMAIL:-achmadibrahim21@gmail.com}"
           # Tentukan variabel jalur sub-folder target agar dinamis
           TARGET_DIR="SMSML_Achmad-Ibrahim/preprocessing"
           # Tambahkan file output dataset jika ada di sub-folder
