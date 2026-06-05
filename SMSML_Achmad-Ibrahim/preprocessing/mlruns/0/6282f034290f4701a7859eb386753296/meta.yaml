@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/6282f034290f4701a7859eb386753296/artifacts
+end_time: 1780659699964
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6282f034290f4701a7859eb386753296
+run_name: unleashed-mare-705
+run_uuid: 6282f034290f4701a7859eb386753296
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780659697849
+status: 3
+tags: []
+user_id: runner
