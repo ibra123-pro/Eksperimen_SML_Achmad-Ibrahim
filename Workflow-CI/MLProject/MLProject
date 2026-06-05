@@ -1,8 +1,7 @@
 name: UMKM_Pondok_Gede_Modelling_Pipeline_CICD
 
-# Menggunakan lingkungan lokal karena dependensi akan diurus oleh GitHub runner
 environment:
-  python: "3.12.7"
+  conda_env: conda.yaml
 
 entry_points:
   # Entry point untuk baseline model (modelling.py)

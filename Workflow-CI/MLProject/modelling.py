@@ -10,7 +10,13 @@ from sklearn.metrics import mean_squared_error, r2_score
 def train_CICD_model():
     mlflow.sklearn.autolog()
 
-    mlflow.set_tracking_uri("http://127.0.0.1:5000") 
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print("[CI DETECTED] Menggunakan tracking URI lokal untuk GitHub Actions...")
+        mlflow.set_tracking_uri("file:./mlruns")
+    else:
+        # JIKA dijalankan di laptopmu (Lokal), tetap gunakan port 5000 sesuai kriteria tugas
+        print("[LOKAL DETECTED] Menggunakan tracking URI localhost port 5000...")
+        mlflow.set_tracking_uri("http://127.0.0.1:5000")
     mlflow.set_experiment("UMKM_Pondok_Gede_Modelling")
     
     print("=== [CICD PIPELINE] Memulai Proses Training Model Baseline ===")
