@@ -1,4 +1,5 @@
 import os
+import shutil
 import pandas as pd
 import numpy as np
 import mlflow
@@ -53,6 +54,16 @@ def train_CICD_model():
         print(f"Mean Squared Error: {mse:.4f}")
         print(f"R-squared: {r2:.4f}")
         print("=== Seluruh parameter, metrik, dan artifak model dicatat otomatis oleh Autolog! ===")
+
+        target_dir = "model_dir/model"
+        
+        # Bersihkan folder lama jika ada agar struktur artifact tidak tumpang tindih
+        if os.path.exists(target_dir):
+            shutil.rmtree(target_dir)
+            
+        # Simpan model secara lokal agar bisa dibaca perintah COPY di Dockerfile
+        mlflow.sklearn.save_model(sk_model=model, path=target_dir)
+        print(f"[SUCCESS] Model berhasil diekspor ke folder '{target_dir}'!")
 
 if __name__ == "__main__":
     train_CICD_model()
