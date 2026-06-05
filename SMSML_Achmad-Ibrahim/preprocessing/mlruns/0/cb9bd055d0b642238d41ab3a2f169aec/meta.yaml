@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/cb9bd055d0b642238d41ab3a2f169aec/artifacts
+end_time: 1780655940729
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cb9bd055d0b642238d41ab3a2f169aec
+run_name: nebulous-frog-754
+run_uuid: cb9bd055d0b642238d41ab3a2f169aec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780655938693
+status: 3
+tags: []
+user_id: runner

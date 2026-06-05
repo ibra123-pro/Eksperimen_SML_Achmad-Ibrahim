@@ -10,6 +10,7 @@ on:
 
 env:
   MLFLOW_EXPERIMENT_NAME: "UMKM_Pondok_Gede_Modelling"
+  MLFLOW_TRACKING_URI: "file:./mlruns"
 
 jobs:
   build-and-push:
@@ -19,22 +20,22 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 2. Siapkan Python 3.12.7
+      # 2. Siapkan Python 3.12.7 (Sudah diperbaiki tanda strip-nya agar tidak error)
       - name: Set up Python 3.12.7
         uses: actions/setup-python@v4
         with:
           python-version: "3.12.7"
 
-      # 3. Instal SEMUA dependensi yang dibutuhkan (Sesuai requirements.txt manual)
+      # 3. Instal dependensi pendukung di server
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pandas numpy scikit-learn==1.5.2 openpyxl mlflow==2.19.0
 
-      # 4. Jalankan MLflow Project (Memicu modelling.py via MLproject)
+      # 4. Jalankan MLflow Project di dalam sub-folder pilihanmu
       - name: Run MLflow Project
         run: |
-          mlflow run . --env-manager=local
+          mlflow run Workflow-CI/MLProject/ --env-manager=local
 
       # 5. Amankan dan Simpan Hasil Log Eksperimen (mlruns) ke GitHub
       - name: Save Artifacts and Log to Repository
@@ -45,20 +46,15 @@ jobs:
           git config --global user.name "${GIT_NAME:-ibra123-pro}"
           git config --global user.email "${GIT_EMAIL:-achmadibrahim21@gmail.com}"
           
-          # Daftarkan folder mlruns dari subfolder (Bypass .gitignore dengan -f)
-          TARGET_DIR="SMSML_Achmad-Ibrahim/preprocessing"
+          # Daftarkan folder mlruns yang lahir di dalam sub-folder kamu
+          TARGET_DIR="Workflow-CI/MLProject"
           if [ -d "$TARGET_DIR/mlruns" ]; then
             git add -f "$TARGET_DIR/mlruns/"
           fi
           
-          MODEL_DIR="Membangun_model"
-          if [ -d "$MODEL_DIR/mlruns" ]; then
-            git add -f "$MODEL_DIR/mlruns/"
-          fi
-          
-          # Commit dan Push dengan Rebase agar anti-bentrok
+          # Periksa status perubahan untuk commit
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Save mlruns from CI run [skip ci]"
+            git commit -m "Save mlruns from CI modelling run [skip ci]"
             git pull --rebase origin main
             git push origin main
           else
@@ -72,11 +68,11 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      # 7. Build dan Push Docker Image Menggunakan Dockerfile di Folder Membangun_model
+      # 7. Build dan Push Docker Image menggunakan Dockerfile di dalam sub-folder kamu
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./Membangun_model
-          file: ./Membangun_model/Dockerfile
+          context: ./Workflow-CI/MLProject
+          file: ./Workflow-CI/MLProject/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/umkm-pondokgede-model:latest
