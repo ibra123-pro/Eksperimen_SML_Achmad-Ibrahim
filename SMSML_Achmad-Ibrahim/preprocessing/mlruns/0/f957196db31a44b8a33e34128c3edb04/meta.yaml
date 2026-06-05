@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/f957196db31a44b8a33e34128c3edb04/artifacts
+end_time: 1780622878213
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f957196db31a44b8a33e34128c3edb04
+run_name: placid-chimp-921
+run_uuid: f957196db31a44b8a33e34128c3edb04
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780622876034
+status: 3
+tags: []
+user_id: runner
