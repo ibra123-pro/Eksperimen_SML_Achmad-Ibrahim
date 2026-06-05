@@ -10,8 +10,8 @@ on:
 
 env:
   MLFLOW_EXPERIMENT_NAME: "UMKM_Pondok_Gede_Modelling"
-  MLFLOW_TRACKING_URI: "file:./mlruns"
-
+  MLFLOW_TRACKING_URI: "file://${{ github.workspace }}/mlruns"
+  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -46,10 +46,8 @@ jobs:
           git config --global user.name "${GIT_NAME:-ibra123-pro}"
           git config --global user.email "${GIT_EMAIL:-achmadibrahim21@gmail.com}"
           
-          # Daftarkan folder mlruns yang lahir di dalam sub-folder kamu
-          TARGET_DIR="Workflow-CI/MLProject"
-          if [ -d "$TARGET_DIR/mlruns" ]; then
-            git add -f "$TARGET_DIR/mlruns/"
+          if [ -d "mlruns" ]; then
+            git add -f mlruns/
           fi
           
           # Periksa status perubahan untuk commit

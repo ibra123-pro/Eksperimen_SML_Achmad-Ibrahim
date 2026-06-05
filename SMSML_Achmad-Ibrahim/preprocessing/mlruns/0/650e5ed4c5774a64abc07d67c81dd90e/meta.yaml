@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/650e5ed4c5774a64abc07d67c81dd90e/artifacts
+end_time: 1780657722748
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 650e5ed4c5774a64abc07d67c81dd90e
+run_name: bedecked-gull-154
+run_uuid: 650e5ed4c5774a64abc07d67c81dd90e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780657721140
+status: 3
+tags: []
+user_id: runner
