@@ -45,10 +45,8 @@ jobs:
           GIT_NAME: ${{ secrets.username }}
           GIT_EMAIL: ${{ secrets.email }}
       run: |
-          # Konfigurasi identitas Git global
           git config --global user.name "${GIT_NAME:-ibra123-pro}"
           git config --global user.email "${GIT_EMAIL:-achmadibrahim21@gmail.com}"
-          
           # Tentukan variabel jalur sub-folder target agar dinamis
           TARGET_DIR="SMSML_Achmad-Ibrahim/preprocessing"
           # Tambahkan file output dataset jika ada di sub-folder
@@ -67,6 +65,7 @@ jobs:
           # Periksa status perubahan secara menyeluruh di repositori
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Save mlruns and dataset from CI run [skip ci]"
+            git pull --rebase origin main
             git push origin main
           else
             echo "No changes to commit"

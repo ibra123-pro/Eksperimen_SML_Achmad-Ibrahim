@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/f68c667d2dbe404abd96189c3caf7758/artifacts
+end_time: 1780654589327
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f68c667d2dbe404abd96189c3caf7758
+run_name: enthused-wasp-380
+run_uuid: f68c667d2dbe404abd96189c3caf7758
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780654587210
+status: 3
+tags: []
+user_id: runner
