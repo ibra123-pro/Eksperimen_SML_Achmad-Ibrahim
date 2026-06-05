@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/ba15b070769544fcb51f725854f126c0/artifacts
+end_time: 1780661027930
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ba15b070769544fcb51f725854f126c0
+run_name: debonair-seal-793
+run_uuid: ba15b070769544fcb51f725854f126c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780661025770
+status: 3
+tags: []
+user_id: runner
