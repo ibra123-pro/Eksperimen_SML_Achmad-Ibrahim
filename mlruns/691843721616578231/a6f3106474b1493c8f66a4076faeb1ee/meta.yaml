@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/691843721616578231/a6f3106474b1493c8f66a4076faeb1ee/artifacts
+end_time: 1780659115279
+entry_point_name: ''
+experiment_id: '691843721616578231'
+lifecycle_stage: active
+run_id: a6f3106474b1493c8f66a4076faeb1ee
+run_name: trusting-whale-387
+run_uuid: a6f3106474b1493c8f66a4076faeb1ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780659106464
+status: 3
+tags: []
+user_id: runner
