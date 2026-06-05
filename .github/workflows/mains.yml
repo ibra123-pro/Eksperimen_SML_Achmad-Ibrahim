@@ -34,8 +34,7 @@ jobs:
       # 4. Jalankan MLflow Project (Memicu modelling.py via MLproject)
       - name: Run MLflow Project
         run: |
-          mlflow run . --env-manager=local
-
+         mlflow run Workflow-CI/MLProject/ --env-manager=local
       # 5. Amankan dan Simpan Hasil Log Eksperimen (mlruns) ke GitHub
       - name: Save Artifacts and Log to Repository
         env:
@@ -76,7 +75,7 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./Membangun_model
-          file: ./Membangun_model/Dockerfile
+          context: ./Workflow-CI/MLProject
+          file: ./Workflow-CI/MLProject/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/umkm-pondokgede-model:latest
