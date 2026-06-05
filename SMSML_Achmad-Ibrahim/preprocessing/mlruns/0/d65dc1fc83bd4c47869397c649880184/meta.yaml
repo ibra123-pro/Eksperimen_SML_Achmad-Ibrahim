@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/d65dc1fc83bd4c47869397c649880184/artifacts
+end_time: 1780654512763
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d65dc1fc83bd4c47869397c649880184
+run_name: skittish-eel-397
+run_uuid: d65dc1fc83bd4c47869397c649880184
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780654510662
+status: 3
+tags: []
+user_id: runner
