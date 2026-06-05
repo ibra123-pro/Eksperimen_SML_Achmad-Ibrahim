@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/691843721616578231/074220628ba84dea90ed6143c2740597/artifacts
+end_time: 1780658935970
+entry_point_name: ''
+experiment_id: '691843721616578231'
+lifecycle_stage: active
+run_id: 074220628ba84dea90ed6143c2740597
+run_name: carefree-roo-795
+run_uuid: 074220628ba84dea90ed6143c2740597
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780658927220
+status: 3
+tags: []
+user_id: runner
