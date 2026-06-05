@@ -1,0 +1,80 @@
+name: UMKM_Pondok_Gede_Modelling_Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  # Diubah agar langsung menunjuk ke file CSV di root repositori
+  CSV_URL: "train_pca.csv"
+  TARGET_VAR: "Credit_Score"
+  MLFLOW_EXPERIMENT_NAME: "credit_scoring_experiment"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v4
+        with:
+            python-version: "3.12.7"
+            
+      - name: Check Env
+        run: |
+          echo $CSV_URL
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mlflow 
+          
+      - name: Run mlflow project
+        run: |
+          # Menggunakan titik (.) karena file MLproject berada di root folder saat ini
+          mlflow run . --env-manager=local
+          
+      - name: Get latest MLflow run_id
+        run: |
+          # Menggunakan script Python untuk mengambil Run ID terakhir dari eksperimen aktif
+          RUN_ID=$(python -c "
+          import mlflow
+          client = mlflow.tracking.MlflowClient()
+          exp = client.get_experiment_by_name('${{ env.MLFLOW_EXPERIMENT_NAME }}')
+          runs = client.search_runs(experiment_ids=[exp.experiment_id], order_by=['attributes.start_time DESC'], max_results=1)
+          if runs: print(runs[0].info.run_id)
+          ")
+          
+          # Validasi jika RUN_ID kosong agar tidak lanjut ke proses build docker yang pasti gagal
+          if [ -z "$RUN_ID" ]; then
+            echo "Error: Run ID tidak ditemukan!"
+            exit 1
+          fi
+          
+          echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
+          echo "Latest run_id berhasil didapat: $RUN_ID"
+          
+      - name: Build Docker Model
+        run: |
+          mlflow models build-docker --model-uri "runs:/$RUN_ID/model" --name "cc"
+          
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          
+      - name: Tag Docker Image
+        run: |
+          docker tag cc ${{ secrets.DOCKER_HUB_USERNAME }}/cc:latest
+          
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/cc:latest
