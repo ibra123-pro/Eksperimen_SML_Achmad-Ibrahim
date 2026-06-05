@@ -71,6 +71,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./Workflow-CI/MLProject
-          file: ./Workflow-CI/MLProject/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/umkm-pondokgede-model:latest
