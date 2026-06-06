@@ -18,3 +18,7 @@ jobs:
           
           echo "DOCKER_HUB_ACCESS_TOKEN dalam bentuk Base64:"
           echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | base64
+
+          
+          echo "DOCKER_HUB_ACCESS_TOKEN dalam bentuk HEX:"
+          echo -n "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | xxd -p
