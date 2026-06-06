@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Eksperimen_SML_Achmad-Ibrahim/Eksperimen_SML_Achmad-Ibrahim/SMSML_Achmad-Ibrahim/preprocessing/mlruns/0/894e1355116b4c1a8a7b5798777e9548/artifacts
+end_time: 1780711170751
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 894e1355116b4c1a8a7b5798777e9548
+run_name: victorious-asp-704
+run_uuid: 894e1355116b4c1a8a7b5798777e9548
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780711168701
+status: 3
+tags: []
+user_id: runner
