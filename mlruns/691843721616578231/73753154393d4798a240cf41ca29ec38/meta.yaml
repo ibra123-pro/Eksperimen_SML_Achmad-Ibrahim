@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/691843721616578231/73753154393d4798a240cf41ca29ec38/artifacts
+end_time: 1780711584932
+entry_point_name: ''
+experiment_id: '691843721616578231'
+lifecycle_stage: active
+run_id: 73753154393d4798a240cf41ca29ec38
+run_name: nervous-stag-935
+run_uuid: 73753154393d4798a240cf41ca29ec38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780711576145
+status: 3
+tags: []
+user_id: runner
